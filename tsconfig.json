@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ES6",
+        "target": "ESNEXT",
         "baseUrl": "./", // This must be specified if "paths" is.
         "paths": {
             "@myhelper/*": [
@@ -11,5 +11,7 @@
         "moduleResolution": "Node",
         "sourceMap": true,
         "outDir": "../tests-out",
+        "checkJs": true, 
+        "allowSyntheticDefaultImports" : true
     }
 }
