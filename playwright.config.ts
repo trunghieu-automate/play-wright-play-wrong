@@ -26,12 +26,9 @@ export default defineConfig({
     ['list'],
     ['dot'],
     ['blob'],
-    ['junit', {
-      outputFolder: '../other-reports/',
-      outputFile: 'junit-report.json'
-    }],
-    ['json', { outputFolder: '../other-reports/', outputFile: 'test-results.json' }],
-    ['html', { outputFile: 'test-results.html' }]
+    ['junit', { outputFile: 'junit-report.json' , stripANSIControlSequences: true }],
+    ['json', { outputFile: 'test-results.json' }],
+    ['html', { outputFile: 'test-results.html',  open: 'always' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -40,6 +37,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    colorScheme: 'dark', // or light
+    
+
   },
 
   /* Configure projects for major browsers */
