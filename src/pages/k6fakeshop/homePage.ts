@@ -1,18 +1,20 @@
 import type { Page, Locator } from '@playwright/test';
 
 export class HomePage {
-  private readonly searchBox: Locator;
-  private readonly productItems: Locator;
-  private readonly path: string
+  readonly searchBox: Locator;
+  readonly productItems: Locator;
+  readonly path: string
+  readonly productList : Locator
 
   constructor(public readonly page: Page) {
     this.path = 'http://ecommerce.test.k6.io/'
     this.searchBox = this.page.locator('input#search');
     this.productItems = this.page.getByTestId('product-item');
+    this.productList = this.page.locator(`xpath=//ul[contains(@class,"products column")]//li`)
   }
 
   async goto() {
-    await this.page.goto('http://ecommerce.test.k6.io/');
+    await this.page.goto('http://ecommerce.test.k6.io/', {timeout: 60000, waitUntil: "load"});
   }
 
   async search(text: string) {
