@@ -24,8 +24,8 @@
         {
             "name": "Test case 3: Verify that the user can remove a product from the cart and update the cart details.",
             "steps": [
-                "Navigate to the home page .",
-                "Click on the add to cart button of the first product.",
+                               "Click on the add to cart button of the first product.", "Navigate to the home page .",
+
                 "Click on the add to cart button of the second product.",
                 "Click on the cart icon in the header.",
                 "Expect the cart modal to open and display two products with their details.",

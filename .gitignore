@@ -187,3 +187,15 @@ test-results.json
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# data files
+datas/
+
+# github yaml file
+.github
+
+# example test
+tests-examples/
+
+# vidoes
+videos/
