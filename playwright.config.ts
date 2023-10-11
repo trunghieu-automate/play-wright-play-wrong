@@ -21,14 +21,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['github'],
-    ['line'],
-    ['list'],
-    ['dot'],
-    ['blob'],
-    ['junit', { outputFile: 'junit-report.json' , stripANSIControlSequences: true }],
-    ['json', { outputFile: 'test-results.json' }],
-    ['html', { outputFile: 'test-results.html',  open: 'always' }]
+    ['html', { open: `always` }],
+    ["json", { outputFile: "jsonReport.json" }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -37,28 +31,26 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    colorScheme: 'dark', // or light
-    
-
   },
+  quiet: true,
 
   /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
+ // projects: [
+/*         {
+          name: 'chromium',
+          use: { ...devices['Desktop Chrome'] },
+        },
+    
+        {
+          name: 'firefox',
+          use: { ...devices['Desktop Firefox'] },
+        },
+    
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-
+ */
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
@@ -78,7 +70,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
+ // ],
 
   /* Run your local dev server before starting the tests */
   // webServer: {

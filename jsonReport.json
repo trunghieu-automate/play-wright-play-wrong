@@ -1,0 +1,184 @@
+{
+  "config": {
+    "configFile": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\playwright.config.ts",
+    "rootDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "always"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "jsonReport.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": true,
+    "projects": [
+      {
+        "outputDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.38.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "internal\\jsonTest.test.ts",
+      "file": "internal/jsonTest.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "suite: json manipulation",
+          "file": "internal/jsonTest.test.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "test: read json file as fully json object",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1091,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "{\r\n    \"test_cases\": [\r\n        {\r\n            \"name\": \"Test case 1: Verify that the home page loads correctly and displays the products.\",\r\n            \"steps\": [\r\n                \"Navigate to the home page .\",\r\n                \"Expect the page title to be 'React Shopping Cart'.\",\r\n                \"Expect the page to have a header with the logo and the cart icon.\",\r\n                \"Expect the page to have a main section with a list of products.\",\r\n                \"Expect each product to have an image, a name, a price, and an add to cart button.\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Test case 2: Verify that the user can add a product to the cart and view the cart details.\",\r\n            \"steps\": [\r\n                \"Navigate to the home page .\",\r\n                \"Click on the add to cart button of the first product.\",\r\n                \"Expect a toast message to appear with the text 'Product added to cart'.\",\r\n                \"Click on the cart icon in the header.\",\r\n                \"Expect the cart modal to open and display the product details, such as name, price, quantity, and subtotal.\",\r\n                \"Expect the cart modal to also display the total amount and a checkout button.\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Test case 3: Verify that the user can remove a product from the cart and update the cart details.\",\r\n            \"steps\": [\r\n                \"Navigate to the home page .\",\r\n                \"Click on the add to cart button of the first product.\",\r\n                \"Click on the add to cart button of the second product.\",\r\n                \"Click on the cart icon in the header.\",\r\n                \"Expect the cart modal to open and display two products with their details.\",\r\n                \"Click on the remove button of the first product.\",\r\n                \"Expect the first product to be removed from the cart modal and the toast message to appear with the text 'Product removed from cart'.\",\r\n                \"Expect the cart modal to update the total amount and display only one product.\"\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Test case 4: Verify that the user can checkout and complete an order with a valid credit card.\",\r\n            \"steps\": [\r\n                \"Navigate to the home page .\",\r\n                \"Click on the add to cart button of any product.\",\r\n                \"Click on the cart icon in the header.\",\r\n                \"Click on the checkout button in the cart modal.\",\r\n                \"Expect to be redirected to a checkout page with a form for entering shipping and billing information.\",\r\n                \"Fill in valid shipping and billing information, such as name, address, email, phone number, etc.\",\r\n                \"Fill in a valid credit card number, such as 4242 4242 4242 4242, with any expiration date and CVV code.\",\r\n                \"Click on the place order button at the bottom of the form.\",\r\n                \"Expect to be redirected to a confirmation page with a thank you message and an order summary.\"\r\n            ]\r\n        }\r\n    ]\r\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-11T04:00:22.185Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e80fed367d24ef6a05a9-24a2ca038ca82e1a95dc",
+              "file": "internal/jsonTest.test.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "test: read json file then convert to a map object",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1018,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-11T04:00:24.558Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e80fed367d24ef6a05a9-4ed074cb659b259b8c81",
+              "file": "internal/jsonTest.test.ts",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "test: collect a page meta-data then write to a json file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2718,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Converted array to json object: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\n"
+                        },
+                        {
+                          "text": "[{\"property\":\"fb:app_id\",\"content\":\"570810223073062\"},{\"property\":\"og:type\",\"content\":\"website\"},{\"property\":\"og:title\",\"content\":\"Info\"},{\"property\":\"og:image\",\"content\":\"https://www.bing.com/th?id=OHR.SoprisSunrise_ROW0622459599_tmb.jpg&rf=\"},{\"property\":\"og:image:width\",\"content\":\"1366\"},{\"property\":\"og:image:height\",\"content\":\"768\"},{\"property\":\"og:url\",\"content\":\"https://www.bing.com/?form=HPFBBK&ssd=20231010_0700&mkt=en-WW\"},{\"property\":\"og:site_name\",\"content\":\"Bing\"},{\"property\":\"og:description\",\"content\":\"The colossal Mount Sopris stands out in the Elk Mo\"}]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-11T04:00:25.579Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e80fed367d24ef6a05a9-c0d374814bcfcc50e939",
+              "file": "internal/jsonTest.test.ts",
+              "line": 23,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -184,3 +184,6 @@ blob-report/
 # other report
 junit-report.json
 test-results.json
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -1,20 +1,25 @@
 import fs from "node:fs"
 
 // Define an async function to read a JSON file as a JSON object
-export async function readJSONFileAsObject(filePath: string): Promise<any> {
-    const buffer = await fs.promises.readFile(filePath);
+export async function readJSONFileAsObject(filePath: string): Promise<Record<any, any>> {
+    const buffer = await fs.promises.readFile(filePath, 'utf8');
     const jsonString = buffer.toString();
-    const jsonObject = JSON.parse(jsonString); 
+    const jsonObject = JSON.parse(JSON.stringify(jsonString));
     return jsonObject;
 }
 
-// Define an async function to read a JSON file as a Map object 
-export async function readJSONFileAsMap(filePath: string): Promise<Map<string, any>> {
-    const jsonObject = await readJSONFileAsObject(filePath);
-    const mapObject = new Map<string, any>(); for (const [key, value] of Object.entries(jsonObject)) {
-        mapObject.set(key, value);
+export function convertToMap(obj: any): Map<any, any> {
+    const map = new Map<any, any>();
+    for (const [key, value] of Object.entries(obj)) {
+        if (typeof value === 'object' && value !== null) {
+            // If the value is an object, convert it to a Map as well
+            map.set(key, convertToMap(value));
+        } else {
+            // Otherwise, just set the key and value as they are
+            map.set(key, value);
+        }
     }
-    return mapObject;
+    return map;
 }
 
 // Define an async function to write a Map object or an Object into a JSON file 
