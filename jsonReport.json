@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/kimthoa/ts-playwright-boilerpalte/playwright.config.ts",
-    "rootDir": "/Users/kimthoa/ts-playwright-boilerpalte/tests",
+    "configFile": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\playwright.config.ts",
+    "rootDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -35,12 +35,12 @@
     "quiet": true,
     "projects": [
       {
-        "outputDir": "/Users/kimthoa/ts-playwright-boilerpalte/test-results",
+        "outputDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "/Users/kimthoa/ts-playwright-boilerpalte/tests",
+        "testDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -51,29 +51,27 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.1",
-    "workers": 3,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "k6fakeshop/k6fakeshop.spec.ts",
-      "file": "k6fakeshop/k6fakeshop.spec.ts",
+      "title": "internal\\jsonTest.test.ts",
+      "file": "internal/jsonTest.test.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Suite: @k6fakeshop",
-          "file": "k6fakeshop/k6fakeshop.spec.ts",
+          "title": "suite: json manipulation",
+          "file": "internal/jsonTest.test.ts",
           "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "@TC01 - Verify that the home page loads correctly and displays the products",
+              "title": "test: read json file as fully json object",
               "ok": true,
-              "tags": [
-                "TC01"
-              ],
+              "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
@@ -85,59 +83,104 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 14575,
+                      "duration": 1461,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "adding product = {\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false} to list\n"
+                          "text": "File not found\n"
                         },
                         {
-                          "text": "adding product = {\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false} to list\n"
+                          "text": "{}\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-11T15:33:57.203Z",
+                      "startTime": "2023-10-12T03:25:22.588Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "543d80d651f8fa5b4b37-ba4c6affd1b183487383",
-              "file": "k6fakeshop/k6fakeshop.spec.ts",
+              "id": "e80fed367d24ef6a05a9-dae43f666189d89efd1d",
+              "file": "internal/jsonTest.test.ts",
               "line": 5,
-              "column": 10
+              "column": 9
+            },
+            {
+              "title": "test: read json file then convert to a map object",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 790,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "File not found\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-12T03:25:25.268Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e80fed367d24ef6a05a9-7e918dc3baa6927c696b",
+              "file": "internal/jsonTest.test.ts",
+              "line": 14,
+              "column": 9
+            },
+            {
+              "title": "test: collect a page meta-data then write to a json file",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2927,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Converted array to json object: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\n"
+                        },
+                        {
+                          "text": "[\n  { property: \u001b[32m'fb:app_id'\u001b[39m, content: \u001b[32m'570810223073062'\u001b[39m },\n  { property: \u001b[32m'og:type'\u001b[39m, content: \u001b[32m'website'\u001b[39m },\n  { property: \u001b[32m'og:title'\u001b[39m, content: \u001b[32m'Info'\u001b[39m },\n  {\n    property: \u001b[32m'og:image'\u001b[39m,\n    content: \u001b[32m'https://www.bing.com/th?id=OHR.JohnDayFossil_ROW0705325597_tmb.jpg&rf='\u001b[39m\n  },\n  { property: \u001b[32m'og:image:width'\u001b[39m, content: \u001b[32m'1366'\u001b[39m },\n  { property: \u001b[32m'og:image:height'\u001b[39m, content: \u001b[32m'768'\u001b[39m },\n  {\n    property: \u001b[32m'og:url'\u001b[39m,\n    content: \u001b[32m'https://www.bing.com/?form=HPFBBK&ssd=20231011_0700&mkt=en-WW'\u001b[39m\n  },\n  { property: \u001b[32m'og:site_name'\u001b[39m, content: \u001b[32m'Bing'\u001b[39m },\n  {\n    property: \u001b[32m'og:description'\u001b[39m,\n    content: \u001b[32m\"Oregon's John Day Fossil Beds National Monument, s\"\u001b[39m\n  }\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-12T03:25:26.062Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e80fed367d24ef6a05a9-4557655671e5a0ba364d",
+              "file": "internal/jsonTest.test.ts",
+              "line": 23,
+              "column": 9
             }
           ]
         }

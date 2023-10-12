@@ -12,6 +12,7 @@
         "sourceMap": true,
         "outDir": "../tests-out",
         "checkJs": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": false
     }
 }

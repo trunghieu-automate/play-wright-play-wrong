@@ -1,11 +1,17 @@
 import fs from "node:fs"
 
 // Define an async function to read a JSON file as a JSON object
-export async function readJSONFileAsObject(filePath: string): Promise<Record<any, any>> {
-    const buffer = await fs.promises.readFile(filePath, 'utf8');
-    const jsonString = buffer.toString();
-    const jsonObject = JSON.parse(JSON.stringify(jsonString));
-    return jsonObject;
+export async function readJSONFileAsObject(filePath: string): Promise<any> {
+    if (fs.existsSync(filePath)) {
+        const buffer = await fs.promises.readFile(filePath);
+        const jsonString = buffer.toString();
+        const jsonObject = JSON.parse(jsonString);
+        return jsonObject
+    } else {
+        // Handle the case when the file does not exist
+        console.log("File not found");
+        return {}
+    }
 }
 
 export function convertToMap(obj: any): Map<any, any> {

@@ -5,7 +5,7 @@ test.describe(`suite: json manipulation`, () => {
     test(`test: read json file as fully json object`, async ({ page }) => {
         await page.goto('https://playwright.dev/');
         // Expect can read Json file as a Record Object
-        await readJSONFileAsObject(`testcases/testcases.json`).then((obj) => {
+        await readJSONFileAsObject(`testcases/k6fakeshop/testcases.json`).then((obj) => {
             console.log(obj)
             expect(obj).not.toBeUndefined()
         })
@@ -14,7 +14,7 @@ test.describe(`suite: json manipulation`, () => {
     test(`test: read json file then convert to a map object`, async ({ page }) => {
         await page.goto('https://playwright.dev/');
         // Expect can read Json file as a Record Object
-        await readJSONFileAsObject(`testcases/testcases.json`).then((obj) => {
+        await readJSONFileAsObject(`testcases/k6fakeshop/testcases.json`).then((obj) => {
             const map = convertToMap(obj)
             expect(typeof map).toBe(typeof new Map<any, any>)
         })
