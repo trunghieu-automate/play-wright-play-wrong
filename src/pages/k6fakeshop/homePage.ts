@@ -1,14 +1,13 @@
 import type { Page, Locator } from '@playwright/test';
 
 export class HomePage {
-    
-	readonly searchBox: Locator;
-	readonly productItems: Locator;
-	readonly path: string
+	readonly searchBox: Locator
+	readonly productItems: Locator
 	readonly productList: Locator
 
-	constructor(public readonly page: Page) {
-		this.path = 'http://ecommerce.test.k6.io/'
+	readonly path: string = 'http://ecommerce.test.k6.io/'
+
+	constructor(public page: Page) {
 		this.searchBox = this.page.locator('input#search');
 		this.productItems = this.page.getByTestId('product-item');
 		this.productList = this.page.locator(`xpath=//ul[contains(@class,"products column")]//li`)
@@ -56,18 +55,40 @@ export class HomePage {
 		return JSON.parse(JSON.stringify(prods))
 	}
 
-	async clickOnAProuctByName(prodName : string | Locator) {
-		const allProduct = await this.productList.locator(`xpath=//h2`).all()
-		const targetProd = allProduct.filter(async (prodByName) => {
-			return await prodByName.innerText() == prodName ?  true : false
+	async clickOnAProuctByName(prodName: string | Locator) {
+		const allProductsName = await this.productList.locator(`xpath=//h2`).all()
+		const targetProd = allProductsName.filter(async (prodByName) => {
+			return await prodByName.innerText() == prodName ? true : false
 		}).at(0)
-        await targetProd.click()
+		await targetProd.click()
 		await this.page.waitForURL(/product/);
-    }
-/* 
-	async clickOnARandomProduct() {
-        const noOfProds : number =  (await this.productItems.locator(`xpath=//h2`).all()).length;
-		const randomNum : number = _.random(0, noOfProds-1);
-		await (await this.productItems.locator(`xpath=//h2`).all()).at(randomNum).click()
-    } */
+	}
+
+	async clickOnAddToCartByProductName(prodName: string | Locator) {
+		const allProducts = await this.productList.all()
+		const targetProd = allProducts.filter(async (prodByName) => {
+			const prodName: string = await prodByName.locator(`xpath=//h1`).innerText()
+			return prodName == prodName ? true : false
+		}).at(0)
+		await targetProd.locator(`//a[@rel="nofollow"]`).click()
+		const locatorExp = `//*[contains(@class,"loading") or contains(.,"loading")]`
+		/* const element = await this.page.waitForSelector(locatorExp, { timeout: 1000 })
+		// If the element is found, wait until it is hidden or removed from the DOM
+		if (element) {
+			try {
+				await this.page.waitForSelector(locatorExp, { timeout: 10000, state: "hidden" })
+			} catch (error) {
+				console.log(`element with locator: ${locatorExp} is still displayed`)
+			}
+		} */
+
+		await targetProd.locator(`//a[@title="View cart"]`).click()
+		await this.page.waitForURL(/cart/);
+	}
+	/* 
+		async clickOnARandomProduct() {
+			const noOfProds : number =  (await this.productItems.locator(`xpath=//h2`).all()).length;
+			const randomNum : number = _.random(0, noOfProds-1);
+			await (await this.productItems.locator(`xpath=//h2`).all()).at(randomNum).click()
+		} */
 }

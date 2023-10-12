@@ -19,7 +19,7 @@ test.describe('Suite: @k6fakeshop', () => {
         })
     });
 
-    test.only(`@TC05 - Verify that the user can browser single product details.`, async ({ productPage }) => {
+    test(`@TC05 - Verify that the user can browser single product details.`, async ({ productPage }) => {
         // Expect to be redirected to a product page
         expect(productPage.page.url()).toContain("ecommerce.test.k6.io/product/");
 
@@ -31,5 +31,18 @@ test.describe('Suite: @k6fakeshop', () => {
         await productPage.prodShortDesc.innerText().then(async (str) => { expect(str).toContain(`This is a simple, virtual product.`) })
         await productPage.prodSku.innerText().then(async (str) => { expect(str).toContain(`woo-album`) })
         await productPage.prodTag.innerText().then(async (str) => { expect(str).toContain(`Music`) })
+    })
+
+    test.only(`@TC02 - Verify that the user can add a product to the cart and view the cart details.`, async ({ cartPage }) => {
+        await cartPage.goto()
+        /*   
+                "Navigate to the home page .",
+                "Click on the add to cart button of the first product.",
+                "Expect a toast message to appear with the text 'Product added to cart'.",
+                "Click on the cart icon in the header.",
+                "Expect the cart modal to open and display the product details, such as name, price, quantity, and subtotal.",
+                "Expect the cart modal to also display the total amount and a checkout button." 
+        */
+
     })
 })
