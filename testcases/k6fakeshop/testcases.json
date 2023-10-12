@@ -4,7 +4,7 @@
             "name": "Test case 1: Verify that the home page loads correctly and displays the products.",
             "steps": [
                 "Navigate to the home page .",
-                "Expect the page title to be 'React Shopping Cart'.",
+                "Expect the page title contains 'The k6 Fake eShop'.",
                 "Expect the page to have a header with the logo and the cart icon.",
                 "Expect the page to have a main section with a list of products.",
                 "Expect each product to have an image, a name, a price, and an add to cart button."
@@ -46,6 +46,15 @@
                 "Fill in a valid credit card number, such as 4242 4242 4242 4242, with any expiration date and CVV code.",
                 "Click on the place order button at the bottom of the form.",
                 "Expect to be redirected to a confirmation page with a thank you message and an order summary."
+            ]
+        },
+        {
+            "name": "Test case 5: Verify that the user can browser single product details.",
+            "steps": [
+                "Navigate to the home page .",
+                "Click on first item.",
+                "Expect to be redirected to a product page",
+                "Expect the product details with name, price, description, SKU, category are displayed properly"
             ]
         }
     ]

@@ -1,8 +1,7 @@
 import type { Page, Locator } from '@playwright/test';
-import { ProductSchema } from 'src/constrains/k6fakeshop';
-import { validateJson } from 'src/utils/jsonSchemaUtil';
 
 export class HomePage {
+    
 	readonly searchBox: Locator;
 	readonly productItems: Locator;
 	readonly path: string
@@ -56,4 +55,19 @@ export class HomePage {
 		}
 		return JSON.parse(JSON.stringify(prods))
 	}
+
+	async clickOnAProuctByName(prodName : string | Locator) {
+		const allProduct = await this.productList.locator(`xpath=//h2`).all()
+		const targetProd = allProduct.filter(async (prodByName) => {
+			return await prodByName.innerText() == prodName ?  true : false
+		}).at(0)
+        await targetProd.click()
+		await this.page.waitForURL(/product/);
+    }
+/* 
+	async clickOnARandomProduct() {
+        const noOfProds : number =  (await this.productItems.locator(`xpath=//h2`).all()).length;
+		const randomNum : number = _.random(0, noOfProds-1);
+		await (await this.productItems.locator(`xpath=//h2`).all()).at(randomNum).click()
+    } */
 }
