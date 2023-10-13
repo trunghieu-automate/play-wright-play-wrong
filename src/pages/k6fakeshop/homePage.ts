@@ -4,7 +4,7 @@ export class HomePage {
 	readonly searchBox: Locator
 	readonly productItems: Locator
 	readonly productList: Locator
-	readonly loadingIndicator : string = `//*[contains(@class,"loading") or contains(.,"loading")]`
+	readonly loadingIndicator: string = `//*[contains(@class,"loading") or contains(.,"loading")]`
 	readonly path: string = 'http://ecommerce.test.k6.io/'
 
 	constructor(public page: Page) {
@@ -65,12 +65,15 @@ export class HomePage {
 	}
 
 	async clickOnAddToCartByProductName(prodName: string | Locator) {
+		var prodNameText : string
 		const allProducts = await this.productList.all()
 		const targetProd = allProducts.filter(async (prod) => {
-			return (await prod.locator(`xpath=//h2`).innerText()) == prodName ? true : false
+			prodNameText = await prod.locator(`xpath=//h2`).innerText()
+			return prodNameText == prodName ? true : false
 		}).at(0)
 		await targetProd.locator(`//a[@rel="nofollow"]`).click()
 		await targetProd.locator(`//a[@title="View cart"]`).click()
 		await this.page.waitForURL(/cart/);
 	}
+
 }

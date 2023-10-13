@@ -17,7 +17,25 @@ test.describe('Suite: @k6fakeshop', () => {
             console.log(`String of after reading obj:  ${JSON.stringify(obj)}`)
             expect(await validateJson(JSON.parse(JSON.stringify(obj)), ProductListSchema)).toBe(true)
         })
-    });
+    })
+
+    
+    test(`@TC02 - Verify that the user can add a product to the cart and view the cart details.`, async ({ cartPage }) => {
+        const selectedItemList: Array<string> = cartPage.expectedCartItemList
+
+        // expect the cart contains only 1 items
+        expect(await (cartPage.allCartItems).all(), "Verify there is only 1 item in the cart").toHaveLength(1)
+
+        // Expect the cart modal to open and display the product details, such as name, price, quantity, and subtotal.
+        expect(await (cartPage.allItemNamesColumn).innerText(), "Verify item have proper name").toContain(selectedItemList.at(0))
+        expect(await (cartPage.allItemQuantityColumn).getAttribute(`value`), "Verify item's quantity is proper").toContain(`1`)
+        expect(await (cartPage.allItemSubTotalColumn.innerText()), "item has proper subtotal").toContain(`15.00`)
+
+        //Expect the cart modal to also display the total amount and a checkout button
+        expect(cartPage.cartTotalContainer, "Verify cart total containers displayed properly").toBeVisible()
+        expect((await cartPage.lastTotal.innerText()), "Verify cart total amount is proper").toContain(`15.00`)
+        expect(cartPage.checkoutBtn, "Veirify checkout btn is displayed properly").toBeVisible()
+    })
 
     test(`@TC05 - Verify that the user can browser single product details.`, async ({ productPage }) => {
         // Expect to be redirected to a product page
@@ -33,16 +51,4 @@ test.describe('Suite: @k6fakeshop', () => {
         await productPage.prodTag.innerText().then(async (str) => { expect(str).toContain(`Music`) })
     })
 
-    test.only(`@TC02 - Verify that the user can add a product to the cart and view the cart details.`, async ({ cartPage }) => {
-        await cartPage.goto()
-        /*   
-                "Navigate to the home page .",
-                "Click on the add to cart button of the first product.",
-                "Expect a toast message to appear with the text 'Product added to cart'.",
-                "Click on the cart icon in the header.",
-                "Expect the cart modal to open and display the product details, such as name, price, quantity, and subtotal.",
-                "Expect the cart modal to also display the total amount and a checkout button." 
-        */
-
-    })
 })

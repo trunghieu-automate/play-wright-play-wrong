@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "reporter": [
@@ -38,8 +38,8 @@
         "outputDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "",
-        "name": "",
+        "id": "firefox",
+        "name": "firefox",
         "testDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
         "testIgnore": [],
         "testMatch": [
@@ -51,7 +51,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.1",
-    "workers": 1,
+    "workers": 3,
     "webServer": null
   },
   "suites": [
@@ -69,6 +69,80 @@
           "column": 6,
           "specs": [
             {
+              "title": "@TC01 - Verify that the home page loads correctly and displays the products",
+              "ok": true,
+              "tags": [
+                "TC01"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 11918,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "adding product = {\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "String of after reading obj:  [{\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false},{\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false},{\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false},{\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false},{\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false},{\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false},{\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false},{\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false},{\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false}]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-13T04:26:52.361Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "543d80d651f8fa5b4b37-0d20b2ac3994352eb4c3",
+              "file": "k6fakeshop/k6fakeshop.spec.ts",
+              "line": 7,
+              "column": 9
+            },
+            {
               "title": "@TC02 - Verify that the user can add a product to the cart and view the cart details.",
               "ok": true,
               "tags": [
@@ -79,28 +153,62 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "status": "passed",
-                      "duration": 22385,
+                      "duration": 21695,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-13T01:52:23.712Z",
+                      "startTime": "2023-10-13T04:26:52.335Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "543d80d651f8fa5b4b37-f773e6f4b6e9057cfb69",
+              "id": "543d80d651f8fa5b4b37-3031bbe8a0b51622cce7",
               "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 36,
-              "column": 10
+              "line": 23,
+              "column": 9
+            },
+            {
+              "title": "@TC05 - Verify that the user can browser single product details.",
+              "ok": true,
+              "tags": [
+                "TC05"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 15198,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-13T04:26:52.339Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "543d80d651f8fa5b4b37-3d1ba9b53139e186c083",
+              "file": "k6fakeshop/k6fakeshop.spec.ts",
+              "line": 40,
+              "column": 9
             }
           ]
         }

@@ -15,10 +15,9 @@
             "steps": [
                 "Navigate to the home page .",
                 "Click on the add to cart button of the first product.",
-                "Expect a toast message to appear with the text 'Product added to cart'.",
-                "Click on the cart icon in the header.",
+                "Click on to the cart button.",
                 "Expect the cart modal to open and display the product details, such as name, price, quantity, and subtotal.",
-                "Expect the cart modal to also display the total amount and a checkout button."
+                "Expect the cart modal to also display the total amount and a checkout button." 
             ]
         },
         {

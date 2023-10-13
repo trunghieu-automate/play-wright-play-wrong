@@ -1,12 +1,28 @@
 import type { Page, Locator } from '@playwright/test';
 
 export class CartPage {
-	private readonly checkoutButton: Locator;
-	private readonly cartItems: Locator;
+	readonly checkoutButton: Locator;
+	readonly cartItems: Locator;
+	expectedCartItemList : Array<string>
+	readonly mainCartContainers : Locator
+	readonly allCartItems : Locator
+	readonly allItemNamesColumn : Locator
+	readonly allItemQuantityColumn : Locator
+	readonly allItemSubTotalColumn : Locator
+	readonly cartTotalContainer : Locator
+	readonly lastTotal : Locator
+	readonly checkoutBtn : Locator
 
 	constructor(public readonly page: Page) {
-		this.checkoutButton = this.page.locator('button#checkout');
-		this.cartItems = this.page.getByTestId('cart-item');
+		this.expectedCartItemList = []
+		this.mainCartContainers = this.page.locator(`xpath=//main//table[contains(@class,"cart")]`)
+		this.allCartItems = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]`)
+		this.allItemNamesColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-name"]`)
+		this.allItemQuantityColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-quantity"]//input`)
+		this.allItemSubTotalColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-subtotal"]//bdi`)
+		this.cartTotalContainer = this.page.locator(`xpath=//div[@class="cart_totals "]`)
+		this.lastTotal = this.page.locator(`xpath=//td[@data-title="Total"]//bdi`)
+		this.checkoutBtn = this.page.locator(`xpath=//div//a[contains(@class,"checkout-button")]`)
 	}
 
 	async goto() {

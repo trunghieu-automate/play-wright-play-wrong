@@ -25,8 +25,8 @@ export const test = base.extend<MyFixtures>({
         const homePage = new HomePage(page);
         const productPage = new ProductPage(page);
         await homePage.goto()
-        await homePage.clickOnAProuctByName(`Album`)
-        // Use the fixture value in the test.
+        const selectedItem : string = `Album`
+        await homePage.clickOnAProuctByName(selectedItem)
         await use(productPage);
     },
     
@@ -35,14 +35,14 @@ export const test = base.extend<MyFixtures>({
         const homePage = new HomePage(page);
         const cartPage = new CartPage(page);
         await homePage.goto()
-        await homePage.clickOnAddToCartByProductName(`Album`)
-        // Use the fixture value in the test.
+        const selectedItem : string = `Album`
+        await homePage.clickOnAddToCartByProductName(selectedItem)
+        cartPage.expectedCartItemList.push(selectedItem)
         await use(cartPage);
     },
+
     myAccountPage: async ({ page }, use) => {
-        // Set up the fixture.
         const myAccountPage = new MyAccountPage(page);
-        // Use the fixture value in the test.
         await use(myAccountPage);
     }
 })
