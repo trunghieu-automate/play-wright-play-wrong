@@ -4,7 +4,7 @@ export class HomePage {
 	readonly searchBox: Locator
 	readonly productItems: Locator
 	readonly productList: Locator
-
+	readonly loadingIndicator : string = `//*[contains(@class,"loading") or contains(.,"loading")]`
 	readonly path: string = 'http://ecommerce.test.k6.io/'
 
 	constructor(public page: Page) {
@@ -57,8 +57,8 @@ export class HomePage {
 
 	async clickOnAProuctByName(prodName: string | Locator) {
 		const allProductsName = await this.productList.locator(`xpath=//h2`).all()
-		const targetProd = allProductsName.filter(async (prodByName) => {
-			return await prodByName.innerText() == prodName ? true : false
+		const targetProd = allProductsName.filter(async (prod) => {
+			return await prod.innerText() == prodName ? true : false
 		}).at(0)
 		await targetProd.click()
 		await this.page.waitForURL(/product/);
@@ -66,29 +66,11 @@ export class HomePage {
 
 	async clickOnAddToCartByProductName(prodName: string | Locator) {
 		const allProducts = await this.productList.all()
-		const targetProd = allProducts.filter(async (prodByName) => {
-			const prodName: string = await prodByName.locator(`xpath=//h1`).innerText()
-			return prodName == prodName ? true : false
+		const targetProd = allProducts.filter(async (prod) => {
+			return (await prod.locator(`xpath=//h2`).innerText()) == prodName ? true : false
 		}).at(0)
 		await targetProd.locator(`//a[@rel="nofollow"]`).click()
-		const locatorExp = `//*[contains(@class,"loading") or contains(.,"loading")]`
-		/* const element = await this.page.waitForSelector(locatorExp, { timeout: 1000 })
-		// If the element is found, wait until it is hidden or removed from the DOM
-		if (element) {
-			try {
-				await this.page.waitForSelector(locatorExp, { timeout: 10000, state: "hidden" })
-			} catch (error) {
-				console.log(`element with locator: ${locatorExp} is still displayed`)
-			}
-		} */
-
 		await targetProd.locator(`//a[@title="View cart"]`).click()
 		await this.page.waitForURL(/cart/);
 	}
-	/* 
-		async clickOnARandomProduct() {
-			const noOfProds : number =  (await this.productItems.locator(`xpath=//h2`).all()).length;
-			const randomNum : number = _.random(0, noOfProds-1);
-			await (await this.productItems.locator(`xpath=//h2`).all()).at(randomNum).click()
-		} */
 }

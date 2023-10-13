@@ -70,7 +70,7 @@
           "specs": [
             {
               "title": "@TC02 - Verify that the user can add a product to the cart and view the cart details.",
-              "ok": false,
+              "ok": true,
               "tags": [
                 "TC02"
               ],
@@ -84,35 +84,17 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60008,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts",
-                            "column": 68,
-                            "line": 71
-                          },
-                          "message": "Error: locator.innerText: Page closed\n=========================== logs ===========================\nwaiting for locator('xpath=//ul[contains(@class,\"products column\")]//li').first().locator('xpath=//h1')\n============================================================\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\k6fakeshop\\homePage.ts:71\n\n\u001b[0m \u001b[90m 69 |\u001b[39m \t\t\u001b[36mconst\u001b[39m allProducts \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mproductList\u001b[33m.\u001b[39mall()\u001b[0m\n\u001b[0m \u001b[90m 70 |\u001b[39m \t\t\u001b[36mconst\u001b[39m targetProd \u001b[33m=\u001b[39m allProducts\u001b[33m.\u001b[39mfilter(\u001b[36masync\u001b[39m (prodByName) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 71 |\u001b[39m \t\t\t\u001b[36mconst\u001b[39m prodName\u001b[33m:\u001b[39m string \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m prodByName\u001b[33m.\u001b[39mlocator(\u001b[32m`xpath=//h1`\u001b[39m)\u001b[33m.\u001b[39minnerText()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \t\t\t                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 72 |\u001b[39m \t\t\t\u001b[36mreturn\u001b[39m prodName \u001b[33m==\u001b[39m prodName \u001b[33m?\u001b[39m \u001b[36mtrue\u001b[39m \u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 73 |\u001b[39m \t\t})\u001b[33m.\u001b[39mat(\u001b[35m0\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 74 |\u001b[39m \t\t\u001b[36mawait\u001b[39m targetProd\u001b[33m.\u001b[39mlocator(\u001b[32m`//a[@rel=\"nofollow\"]`\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[0m\n\n\u001b[2m    at filter (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts:71:68)\u001b[22m\n\u001b[2m    at HomePage.clickOnAddToCartByProductName (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts:70:34)\u001b[22m\n\u001b[2m    at Object.cartPage (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\fixtures\\k6-test.ts:38:9)\u001b[22m"
-                        },
-                        {
-                          "message": "Pending operations:\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.innerText at src\\pages\\k6fakeshop\\homePage.ts:71:68\n  - locator.click at src\\pages\\k6fakeshop\\homePage.ts:86:55\n"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 22385,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-12T13:45:55.275Z",
+                      "startTime": "2023-10-13T01:52:23.712Z",
                       "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "543d80d651f8fa5b4b37-f773e6f4b6e9057cfb69",
