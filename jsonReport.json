@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -38,8 +38,8 @@
         "outputDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "firefox",
-        "name": "firefox",
+        "id": "chromium",
+        "name": "chromium",
         "testDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
         "testIgnore": [],
         "testMatch": [
@@ -51,7 +51,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.38.1",
-    "workers": 3,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -66,149 +66,59 @@
           "title": "Suite: @k6fakeshop",
           "file": "k6fakeshop/k6fakeshop.spec.ts",
           "line": 6,
-          "column": 6,
+          "column": 8,
           "specs": [
             {
-              "title": "@TC01 - Verify that the home page loads correctly and displays the products",
-              "ok": true,
+              "title": "@TC03 - Verify that the user can remove a product from the cart and update the cart details.",
+              "ok": false,
               "tags": [
-                "TC01"
+                "TC03"
               ],
               "tests": [
                 {
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 11918,
-                      "errors": [],
-                      "stdout": [
+                      "status": "timedOut",
+                      "duration": 60013,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
+                      },
+                      "errors": [
                         {
-                          "text": "adding product = {\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false} to list\n"
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
                         },
                         {
-                          "text": "adding product = {\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false} to list\n"
+                          "location": {
+                            "file": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts",
+                            "column": 19,
+                            "line": 17
+                          },
+                          "message": "Error: page.goto: Page closed\n=========================== logs ===========================\nnavigating to \"http://ecommerce.test.k6.io/\", waiting until \"load\"\n============================================================\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\k6fakeshop\\homePage.ts:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m \t\u001b[36masync\u001b[39m goto() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m \t\t\u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(\u001b[32m'http://ecommerce.test.k6.io/'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m\u001b[33m,\u001b[39m waitUntil\u001b[33m:\u001b[39m \u001b[32m\"load\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \t\t                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m \t}\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m \t\u001b[36masync\u001b[39m search(text\u001b[33m:\u001b[39m string) {\u001b[0m\n\n\u001b[2m    at HomePage.goto (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts:17:19)\u001b[22m\n\u001b[2m    at Object.cartPage (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\fixtures\\k6-test.ts:40:24)\u001b[22m"
                         },
                         {
-                          "text": "adding product = {\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "adding product = {\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false} to list\n"
-                        },
-                        {
-                          "text": "String of after reading obj:  [{\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false},{\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false},{\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false},{\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false},{\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false},{\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false},{\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false},{\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false},{\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false}]\n"
+                          "message": "Pending operations:\n  - page.goto at src\\pages\\k6fakeshop\\homePage.ts:17:19\n"
                         }
                       ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-10-13T04:26:52.361Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "543d80d651f8fa5b4b37-0d20b2ac3994352eb4c3",
-              "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 7,
-              "column": 9
-            },
-            {
-              "title": "@TC02 - Verify that the user can add a product to the cart and view the cart details.",
-              "ok": true,
-              "tags": [
-                "TC02"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 21695,
-                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-13T04:26:52.335Z",
+                      "startTime": "2023-10-13T14:01:12.651Z",
                       "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "543d80d651f8fa5b4b37-3031bbe8a0b51622cce7",
+              "id": "543d80d651f8fa5b4b37-b7595817d5faafb7a130",
               "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 23,
-              "column": 9
-            },
-            {
-              "title": "@TC05 - Verify that the user can browser single product details.",
-              "ok": true,
-              "tags": [
-                "TC05"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 15198,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-10-13T04:26:52.339Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "543d80d651f8fa5b4b37-3d1ba9b53139e186c083",
-              "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 40,
-              "column": 9
+              "line": 55,
+              "column": 12
             }
           ]
         }

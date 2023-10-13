@@ -1,10 +1,10 @@
 import { ProductListSchema } from "src/constrains/k6fakeshop"
-import { test, expect } from "src/fixtures/k6-test"
+import { test as k6Test, expect } from "src/fixtures/k6-test"
 import { validateJson } from "src/utils/jsonSchemaUtil"
 import { readJSONFileAsObject, writeObjectToJSONFile } from "src/utils/jsonUtil"
 
-test.describe('Suite: @k6fakeshop', () => {
-    test(`@TC01 - Verify that the home page loads correctly and displays the products`, async ({ homePage }) => {
+k6Test.describe('Suite: @k6fakeshop', () => {
+    k6Test(`@TC01 - Verify that the home page loads correctly and displays the products`, async ({ homePage }) => {
         await expect(homePage.page).toHaveTitle(/The k6 Fake eShop/)
 
         //verify there are 12 products is presented
@@ -19,8 +19,7 @@ test.describe('Suite: @k6fakeshop', () => {
         })
     })
 
-    
-    test(`@TC02 - Verify that the user can add a product to the cart and view the cart details.`, async ({ cartPage }) => {
+    k6Test(`@TC02 - Verify that the user can add a product to the cart and view the cart details.`, async ({ cartPage }) => {
         const selectedItemList: Array<string> = cartPage.expectedCartItemList
 
         // expect the cart contains only 1 items
@@ -37,7 +36,7 @@ test.describe('Suite: @k6fakeshop', () => {
         expect(cartPage.checkoutBtn, "Veirify checkout btn is displayed properly").toBeVisible()
     })
 
-    test(`@TC05 - Verify that the user can browser single product details.`, async ({ productPage }) => {
+    k6Test(`@TC05 - Verify that the user can browser single product details.`, async ({ productPage }) => {
         // Expect to be redirected to a product page
         expect(productPage.page.url()).toContain("ecommerce.test.k6.io/product/");
 
@@ -49,6 +48,11 @@ test.describe('Suite: @k6fakeshop', () => {
         await productPage.prodShortDesc.innerText().then(async (str) => { expect(str).toContain(`This is a simple, virtual product.`) })
         await productPage.prodSku.innerText().then(async (str) => { expect(str).toContain(`woo-album`) })
         await productPage.prodTag.innerText().then(async (str) => { expect(str).toContain(`Music`) })
+    })
+
+    k6Test.use({ prodNames: [`Polo`, `Album`] })
+    k6Test.only(`@TC03 - Verify that the user can remove a product from the cart and update the cart details.`, async ({ cartPage }) => {
+        
     })
 
 })

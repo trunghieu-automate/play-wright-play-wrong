@@ -3,7 +3,7 @@ import type { Page, Locator } from '@playwright/test';
 export class CartPage {
 	readonly checkoutButton: Locator;
 	readonly cartItems: Locator;
-	expectedCartItemList : Array<string>
+	expectedCartItemList : string[]
 	readonly mainCartContainers : Locator
 	readonly allCartItems : Locator
 	readonly allItemNamesColumn : Locator

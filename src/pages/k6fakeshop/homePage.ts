@@ -64,15 +64,18 @@ export class HomePage {
 		await this.page.waitForURL(/product/);
 	}
 
-	async clickOnAddToCartByProductName(prodName: string | Locator) {
+	async clickOnAddToCartByProductNames(prodName : string[]) {
 		var prodNameText : string
-		const allProducts = await this.productList.all()
-		const targetProd = allProducts.filter(async (prod) => {
-			prodNameText = await prod.locator(`xpath=//h2`).innerText()
-			return prodNameText == prodName ? true : false
-		}).at(0)
-		await targetProd.locator(`//a[@rel="nofollow"]`).click()
-		await targetProd.locator(`//a[@title="View cart"]`).click()
+		var currentProd : Locator
+		prodName.forEach(async(expectedName) => {
+			const allProducts = await this.productList.all()
+			currentProd = allProducts.filter(async (prod) => {
+				prodNameText = await prod.locator(`xpath=//h2`).innerText()
+				return prodNameText == expectedName ? true : false
+			}).at(0)
+			await currentProd.locator(`//a[@rel="nofollow"]`).click()
+		})
+		await currentProd.locator(`//a[@title="View cart"]`).click()
 		await this.page.waitForURL(/cart/);
 	}
 

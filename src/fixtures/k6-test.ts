@@ -10,6 +10,7 @@ type MyFixtures = {
     cartPage: CartPage
     myAccountPage: MyAccountPage
     productPage: ProductPage
+    prodNames: string[]
 }
 
 export const test = base.extend<MyFixtures>({
@@ -21,7 +22,6 @@ export const test = base.extend<MyFixtures>({
         await use(homePage);
     },
     productPage: async ({ page }, use) => {
-        // Set up the fixture.
         const homePage = new HomePage(page);
         const productPage = new ProductPage(page);
         await homePage.goto()
@@ -29,15 +29,17 @@ export const test = base.extend<MyFixtures>({
         await homePage.clickOnAProuctByName(selectedItem)
         await use(productPage);
     },
-    
-    cartPage: async ({ page }, use) => {
-        // Set up the fixture.
+
+    // Define an option and provide a default value. 
+    // We can later override it in the config or in the test. 
+    prodNames: [[`Album`], { option: true }], 
+
+    cartPage: async ({ page, prodNames }, use) => {
         const homePage = new HomePage(page);
         const cartPage = new CartPage(page);
         await homePage.goto()
-        const selectedItem : string = `Album`
-        await homePage.clickOnAddToCartByProductName(selectedItem)
-        cartPage.expectedCartItemList.push(selectedItem)
+        await homePage.clickOnAddToCartByProductNames(prodNames)
+        cartPage.expectedCartItemList.push(...prodNames)
         await use(cartPage);
     },
 

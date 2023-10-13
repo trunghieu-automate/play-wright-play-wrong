@@ -13,6 +13,6 @@
         "outDir": "../tests-out",
         "checkJs": true,
         "allowSyntheticDefaultImports": true,
-        "strictNullChecks": false
+        "strictNullChecks": false,
     }
 }
