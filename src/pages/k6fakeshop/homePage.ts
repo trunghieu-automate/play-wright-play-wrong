@@ -1,4 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
+import exp from 'node:constants';
 
 export class HomePage {
 	readonly searchBox: Locator
@@ -6,6 +7,13 @@ export class HomePage {
 	readonly productList: Locator
 	readonly loadingIndicator: string = `//*[contains(@class,"loading") or contains(.,"loading")]`
 	readonly path: string = 'http://ecommerce.test.k6.io/'
+	addToCartByProdNameXpath = (prodName: string) : string => { 
+		return `xpath=//h2[contains(@class,"product__title") and text()="${prodName}"]//parent::a//following-sibling::a[@rel="nofollow"]`
+	}
+
+	toCartByProdNameXpath = (prodName: string) : string => { 
+		return `xpath=//h2[contains(@class,"product__title") and text()="${prodName}"]//parent::a//following-sibling::a[@title="View cart"]`
+	}
 
 	constructor(public page: Page) {
 		this.searchBox = this.page.locator('input#search');
@@ -65,18 +73,12 @@ export class HomePage {
 	}
 
 	async clickOnAddToCartByProductNames(prodName : string[]) {
-		var prodNameText : string
-		var currentProd : Locator
+		let lastProdName : string
 		prodName.forEach(async(expectedName) => {
-			const allProducts = await this.productList.all()
-			currentProd = allProducts.filter(async (prod) => {
-				prodNameText = await prod.locator(`xpath=//h2`).innerText()
-				return prodNameText == expectedName ? true : false
-			}).at(0)
-			await currentProd.locator(`//a[@rel="nofollow"]`).click()
+			lastProdName = expectedName
+			await this.page.locator(this.addToCartByProdNameXpath(expectedName)).click()
 		})
-		await currentProd.locator(`//a[@title="View cart"]`).click()
+		await this.page.locator(this.toCartByProdNameXpath(lastProdName)).click()
 		await this.page.waitForURL(/cart/);
 	}
-
 }

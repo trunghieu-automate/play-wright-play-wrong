@@ -1,9 +1,10 @@
 import type { Page, Locator } from '@playwright/test';
+import {expect} from '@playwright/test'
 
 export class CartPage {
 	readonly checkoutButton: Locator;
 	readonly cartItems: Locator;
-	expectedCartItemList : string[]
+	expectedCartItemList : Array<string>
 	readonly mainCartContainers : Locator
 	readonly allCartItems : Locator
 	readonly allItemNamesColumn : Locator
@@ -20,7 +21,7 @@ export class CartPage {
 		this.allItemNamesColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-name"]`)
 		this.allItemQuantityColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-quantity"]//input`)
 		this.allItemSubTotalColumn = this.page.locator(`xpath=//tbody//tr[contains(@class, "cart_item")]//td[@class="product-subtotal"]//bdi`)
-		this.cartTotalContainer = this.page.locator(`xpath=//div[@class="cart_totals "]`)
+		this.cartTotalContainer = this.page.locator(`xpath=//div[@class="cart_totals" or @class="cart_totals "]`)
 		this.lastTotal = this.page.locator(`xpath=//td[@data-title="Total"]//bdi`)
 		this.checkoutBtn = this.page.locator(`xpath=//div//a[contains(@class,"checkout-button")]`)
 	}
@@ -33,14 +34,15 @@ export class CartPage {
 		await this.checkoutButton.click();
 	}
 
-	async remove(text: string) {
-		const cartItem = this.cartItems.filter({ hasText: text });
-		await cartItem.getByText('Remove').click();
+	async removeAnItemByItsName(name : string) {
+		this.page.waitForSelector(`xpath=//td[@class="product-name" and contains(.,"${name}")]/parent::tr//td[@class="product-remove"]//a`).then(async(ele) => {
+            await ele.click()
+        })
 	}
 
-	async removeAll() {
-		while ((await this.cartItems.count()) > 0) {
-			await this.cartItems.getByText('Remove').first().click();
-		}
+	async verifyNotificationItemRemovedIsDisplayedProperly (name : string) {
+		this.page.waitForSelector(`xpath=//div[@class="woocommerce-notices-wrapper" and contains(., "“${name}” removed.")]`).then(async (locator) => {
+            expect(await locator.isVisible(), `Verify notification is contains “${name}” removed.`).toBeTruthy()
+        })
 	}
 }

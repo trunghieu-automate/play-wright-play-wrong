@@ -38,8 +38,9 @@ export const test = base.extend<MyFixtures>({
         const homePage = new HomePage(page);
         const cartPage = new CartPage(page);
         await homePage.goto()
+        console.log(prodNames[0])
         await homePage.clickOnAddToCartByProductNames(prodNames)
-        cartPage.expectedCartItemList.push(...prodNames)
+        cartPage.expectedCartItemList.concat(prodNames)
         await use(cartPage);
     },
 

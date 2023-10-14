@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\playwright.config.ts",
-    "rootDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
+    "configFile": "/Users/kimthoa/ts-playwright-boilerpalte/playwright.config.ts",
+    "rootDir": "/Users/kimthoa/ts-playwright-boilerpalte/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -35,12 +35,12 @@
     "quiet": true,
     "projects": [
       {
-        "outputDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/test-results",
+        "outputDir": "/Users/kimthoa/ts-playwright-boilerpalte/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "chromium",
-        "name": "chromium",
-        "testDir": "D:/htrungvu/playwright-ts/play-wright-play-wrong/tests",
+        "id": "",
+        "name": "",
+        "testDir": "/Users/kimthoa/ts-playwright-boilerpalte/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -50,22 +50,22 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.38.1",
+    "version": "1.39.0",
     "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "k6fakeshop\\k6fakeshop.spec.ts",
+      "title": "k6fakeshop/k6fakeshop.spec.ts",
       "file": "k6fakeshop/k6fakeshop.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Suite: @k6fakeshop",
+          "title": "@products",
           "file": "k6fakeshop/k6fakeshop.spec.ts",
-          "line": 6,
+          "line": 57,
           "column": 8,
           "specs": [
             {
@@ -79,51 +79,65 @@
                   "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "",
+                  "projectName": "",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60013,
+                      "status": "failed",
+                      "duration": 7627,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
+                        "message": "Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m",
+                        "stack": "Error: Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m\n    at /Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts:82:94",
+                        "location": {
+                          "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
+                          "column": 94,
+                          "line": 82
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 80 |\u001b[39m         \u001b[90m//Expect the cart modal to also display the total amount and a checkout button\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcartTotalContainer\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total containers displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect((\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mlastTotal\u001b[33m.\u001b[39minnerText())\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total amount is proper\"\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m`15.00`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 83 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcheckoutBtn\u001b[33m,\u001b[39m \u001b[32m\"Veirify checkout btn is displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m     })\u001b[0m"
                       },
                       "errors": [
                         {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded while setting up \"cartPage\".\u001b[39m"
-                        },
-                        {
                           "location": {
-                            "file": "D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts",
-                            "column": 19,
-                            "line": 17
+                            "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
+                            "column": 94,
+                            "line": 82
                           },
-                          "message": "Error: page.goto: Page closed\n=========================== logs ===========================\nnavigating to \"http://ecommerce.test.k6.io/\", waiting until \"load\"\n============================================================\n\n\u001b[90m   at \u001b[39m..\\src\\pages\\k6fakeshop\\homePage.ts:17\n\n\u001b[0m \u001b[90m 15 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 |\u001b[39m \t\u001b[36masync\u001b[39m goto() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m \t\t\u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(\u001b[32m'http://ecommerce.test.k6.io/'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m\u001b[33m,\u001b[39m waitUntil\u001b[33m:\u001b[39m \u001b[32m\"load\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \t\t                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 |\u001b[39m \t}\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 |\u001b[39m \t\u001b[36masync\u001b[39m search(text\u001b[33m:\u001b[39m string) {\u001b[0m\n\n\u001b[2m    at HomePage.goto (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\pages\\k6fakeshop\\homePage.ts:17:19)\u001b[22m\n\u001b[2m    at Object.cartPage (D:\\htrungvu\\playwright-ts\\play-wright-play-wrong\\src\\fixtures\\k6-test.ts:40:24)\u001b[22m"
-                        },
-                        {
-                          "message": "Pending operations:\n  - page.goto at src\\pages\\k6fakeshop\\homePage.ts:17:19\n"
+                          "message": "Error: Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m\n\n\u001b[0m \u001b[90m 80 |\u001b[39m         \u001b[90m//Expect the cart modal to also display the total amount and a checkout button\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcartTotalContainer\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total containers displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect((\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mlastTotal\u001b[33m.\u001b[39minnerText())\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total amount is proper\"\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m`15.00`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 83 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcheckoutBtn\u001b[33m,\u001b[39m \u001b[32m\"Veirify checkout btn is displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m     })\u001b[0m\n\n\u001b[2m    at /Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts:82:94\u001b[22m"
                         }
                       ],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Album\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-13T14:01:12.651Z",
-                      "attachments": []
+                      "startTime": "2023-10-14T04:12:59.829Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
+                        "column": 94,
+                        "line": 82
+                      }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "543d80d651f8fa5b4b37-b7595817d5faafb7a130",
+              "id": "543d80d651f8fa5b4b37-44a106aa48f84a0aac4c",
               "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 55,
-              "column": 12
+              "line": 70,
+              "column": 11
             }
           ]
         }
       ]
     }
   ],
-  "errors": []
+  "errors": [],
+  "stats": {
+    "startTime": "2023-10-14T04:12:59.619Z",
+    "duration": 8260.024000000001
+  }
 }
