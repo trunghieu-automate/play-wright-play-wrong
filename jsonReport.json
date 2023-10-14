@@ -65,12 +65,12 @@
         {
           "title": "@products",
           "file": "k6fakeshop/k6fakeshop.spec.ts",
-          "line": 57,
+          "line": 56,
           "column": 8,
           "specs": [
             {
               "title": "@TC03 - Verify that the user can remove a product from the cart and update the cart details.",
-              "ok": false,
+              "ok": true,
               "tags": [
                 "TC03"
               ],
@@ -84,50 +84,32 @@
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "failed",
-                      "duration": 7627,
-                      "error": {
-                        "message": "Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m",
-                        "stack": "Error: Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m\n    at /Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts:82:94",
-                        "location": {
-                          "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
-                          "column": 94,
-                          "line": 82
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 80 |\u001b[39m         \u001b[90m//Expect the cart modal to also display the total amount and a checkout button\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcartTotalContainer\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total containers displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect((\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mlastTotal\u001b[33m.\u001b[39minnerText())\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total amount is proper\"\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m`15.00`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 83 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcheckoutBtn\u001b[33m,\u001b[39m \u001b[32m\"Veirify checkout btn is displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m     })\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
-                            "column": 94,
-                            "line": 82
-                          },
-                          "message": "Error: Verify cart total amount is proper\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"15.00\"\u001b[39m\nReceived string:    \u001b[31m\"$35.00\"\u001b[39m\n\n\u001b[0m \u001b[90m 80 |\u001b[39m         \u001b[90m//Expect the cart modal to also display the total amount and a checkout button\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcartTotalContainer\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total containers displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect((\u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mlastTotal\u001b[33m.\u001b[39minnerText())\u001b[33m,\u001b[39m \u001b[32m\"Verify cart total amount is proper\"\u001b[39m)\u001b[33m.\u001b[39mtoContain(\u001b[32m`15.00`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 83 |\u001b[39m         expect(cartPage\u001b[33m.\u001b[39mcheckoutBtn\u001b[33m,\u001b[39m \u001b[32m\"Veirify checkout btn is displayed properly\"\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m     })\u001b[0m\n\n\u001b[2m    at /Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts:82:94\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 14426,
+                      "errors": [],
                       "stdout": [
                         {
                           "text": "Album\n"
+                        },
+                        {
+                          "text": "{ subTotal: \u001b[36m[AsyncFunction: subTotal]\u001b[39m, total: \u001b[36m[AsyncFunction: total]\u001b[39m }\n"
+                        },
+                        {
+                          "text": "{ subTotal: \u001b[36m[AsyncFunction: subTotal]\u001b[39m, total: \u001b[36m[AsyncFunction: total]\u001b[39m }\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-14T04:12:59.829Z",
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/Users/kimthoa/ts-playwright-boilerpalte/tests/k6fakeshop/k6fakeshop.spec.ts",
-                        "column": 94,
-                        "line": 82
-                      }
+                      "startTime": "2023-10-14T10:19:35.513Z",
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "543d80d651f8fa5b4b37-44a106aa48f84a0aac4c",
               "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 70,
+              "line": 58,
               "column": 11
             }
           ]
@@ -137,7 +119,7 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2023-10-14T04:12:59.619Z",
-    "duration": 8260.024000000001
+    "startTime": "2023-10-14T10:19:35.243Z",
+    "duration": 15067.409
   }
 }

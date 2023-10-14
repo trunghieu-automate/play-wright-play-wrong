@@ -1,9 +1,13 @@
 declare global {
-    interface Product {
+    type Product  = {
         readonly name: string
         readonly price: string[]
         readonly imgLink?: string
         readonly isSale: boolean
+    }
+    type Total = {
+        subTotal: () => Promise <string> | string | Promise<string>
+        total: () => Promise <string> | string | Promise<string>
     }
 } 
 

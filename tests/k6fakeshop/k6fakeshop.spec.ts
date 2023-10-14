@@ -56,19 +56,16 @@ k6Test.describe(`@product`, () => {
 k6Test.describe(`@products`, () => {
     k6Test.use({ prodNames: [`Album`, `Polo`] })
     k6Test(`@TC03 - Verify that the user can remove a product from the cart and update the cart details.`, async ({ cartPage, prodNames }) => {
-        const removedItemName = "Polo"        
+        const removedItemName = "Polo"
         //Expected cart have proper number of item
-        expect(await (cartPage.allCartItems).all(), "Verify there is only 1 item in the cart").toHaveLength(prodNames.length)
-        
+        await cartPage.verifyNumberOfItemInCartIsProper(prodNames.length)
+        const beforeRemoval = await cartPage.getTotal()
         //remove a item on cart 
         await cartPage.removeAnItemByItsName(removedItemName)
         // Then, expect the notificatio message is proper
         await cartPage.verifyNotificationItemRemovedIsDisplayedProperly(removedItemName)
-        
-        //Expect the cart modal to also display the total amount and a checkout button
-        expect(cartPage.cartTotalContainer, "Verify cart total containers displayed properly").toBeVisible()
-        expect((await cartPage.lastTotal.innerText()), "Verify cart total amount is proper").toContain(`15.00`)
-        expect(cartPage.checkoutBtn, "Veirify checkout btn is displayed properly").toBeVisible()
-
+        const afterRemoval = await cartPage.getTotal()
+        await cartPage.verifyTotalSessionIsDisplayedProperly()
+        await cartPage.verifyBeforeAndAfterRemovalIsEqual(afterRemoval, beforeRemoval)
     })
 })
