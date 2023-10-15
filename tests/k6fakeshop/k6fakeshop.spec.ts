@@ -3,7 +3,7 @@ import { test as k6Test, expect } from "src/fixtures/k6-test"
 import { validateJson } from "src/utils/jsonSchemaUtil"
 import { readJSONFileAsObject, writeObjectToJSONFile } from "src/utils/jsonUtil"
 
-k6Test.describe(`@product`, () => {
+k6Test.describe(`@product @home @cart`, () => {
     k6Test.use({ prodNames: [`Album`] })
 
     k6Test(`@TC01 - Verify that the home page loads correctly and displays the products`, async ({ homePage }) => {
@@ -53,7 +53,7 @@ k6Test.describe(`@product`, () => {
 
 })
 
-k6Test.describe(`@products`, () => {
+k6Test.describe(`@cart`, () => {
     k6Test.use({ prodNames: [`Album`, `Polo`] })
     k6Test(`@TC03 - Verify that the user can remove a product from the cart and update the cart details.`, async ({ cartPage, prodNames }) => {
         const removedItemName = "Polo"
@@ -67,5 +67,16 @@ k6Test.describe(`@products`, () => {
         const afterRemoval = await cartPage.getTotal()
         await cartPage.verifyTotalSessionIsDisplayedProperly()
         await cartPage.verifyBeforeAndAfterRemovalIsEqual(afterRemoval, beforeRemoval)
+    })
+})
+
+k6Test.describe(`@payment @cart @home`, () => {
+    k6Test.use({prodNames: ["Album", "Polo", "Hoodie with Zipper", "Beanie", "Cap", "Belt", "Long Sleeve Tee"]})
+    k6Test(`@TC04 - Verify that the user can checkout and complete an order with a valid credit card.`, async ({cartPage}) => {
+        await cartPage.clickCheckoutBtn()
+        await cartPage.verifyPageIsDisplayedProperly(`checkout`)
+        await cartPage.fillAllRequiredFields()
+        await cartPage.clickPlaceOrderBtn()
+        await cartPage.verifyOrderIsMadeProperly()
     })
 })

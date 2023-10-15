@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "reporter": [
@@ -51,7 +51,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.39.0",
-    "workers": 1,
+    "workers": 5,
     "webServer": null
   },
   "suites": [
@@ -63,16 +63,16 @@
       "specs": [],
       "suites": [
         {
-          "title": "@products",
+          "title": "@product @home @cart",
           "file": "k6fakeshop/k6fakeshop.spec.ts",
-          "line": 56,
+          "line": 6,
           "column": 8,
           "specs": [
             {
-              "title": "@TC03 - Verify that the user can remove a product from the cart and update the cart details.",
+              "title": "@TC01 - Verify that the home page loads correctly and displays the products",
               "ok": true,
               "tags": [
-                "TC03"
+                "TC01"
               ],
               "tests": [
                 {
@@ -85,31 +85,133 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 14426,
+                      "duration": 6158,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Album\n"
+                          "text": "adding product = {\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false} to list\n"
                         },
                         {
-                          "text": "{ subTotal: \u001b[36m[AsyncFunction: subTotal]\u001b[39m, total: \u001b[36m[AsyncFunction: total]\u001b[39m }\n"
+                          "text": "adding product = {\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false} to list\n"
                         },
                         {
-                          "text": "{ subTotal: \u001b[36m[AsyncFunction: subTotal]\u001b[39m, total: \u001b[36m[AsyncFunction: total]\u001b[39m }\n"
+                          "text": "adding product = {\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "adding product = {\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false} to list\n"
+                        },
+                        {
+                          "text": "String of after reading obj:  [{\"name\":\"Album\",\"price\":[\"$15.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/album-1.jpg\",\"isSale\":false},{\"name\":\"Beanie\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-2.jpg\",\"isSale\":false},{\"name\":\"Beanie with Logo\",\"price\":[\"$20.00\",\"$18.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/beanie-with-logo-1.jpg\",\"isSale\":false},{\"name\":\"Belt\",\"price\":[\"$65.00\",\"$55.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/belt-2.jpg\",\"isSale\":false},{\"name\":\"Cap\",\"price\":[\"$18.00\",\"$16.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/cap-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie\",\"price\":[\"$42.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Logo\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-logo-2.jpg\",\"isSale\":false},{\"name\":\"Hoodie with Zipper\",\"price\":[\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/hoodie-with-zipper-2.jpg\",\"isSale\":false},{\"name\":\"Logo Collection\",\"price\":[\"$18.00\",\"$45.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/logo-1.jpg\",\"isSale\":false},{\"name\":\"Long Sleeve Tee\",\"price\":[\"$25.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/long-sleeve-tee-2.jpg\",\"isSale\":false},{\"name\":\"Polo\",\"price\":[\"$20.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/polo-2.jpg\",\"isSale\":false},{\"name\":\"Single\",\"price\":[\"$3.00\",\"$2.00\"],\"imgLink\":\"http://ecommerce.test.k6.io/wordpress/wp-content/uploads/2021/02/single-1.jpg\",\"isSale\":false}]\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-14T10:19:35.513Z",
+                      "startTime": "2023-10-15T08:55:34.636Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "543d80d651f8fa5b4b37-44a106aa48f84a0aac4c",
+              "id": "543d80d651f8fa5b4b37-634ccc218be38e061f60",
               "file": "k6fakeshop/k6fakeshop.spec.ts",
-              "line": 58,
+              "line": 9,
+              "column": 11
+            },
+            {
+              "title": "@TC02 - Verify that the user can add a product to the cart and view the cart details.",
+              "ok": true,
+              "tags": [
+                "TC02"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 7440,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Album\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-15T08:55:34.632Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "543d80d651f8fa5b4b37-f8ee16a6c1562942e63f",
+              "file": "k6fakeshop/k6fakeshop.spec.ts",
+              "line": 24,
+              "column": 11
+            },
+            {
+              "title": "@TC05 - Verify that the user can browser single product details.",
+              "ok": true,
+              "tags": [
+                "TC05"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 6784,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-10-15T08:55:34.633Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "543d80d651f8fa5b4b37-2a0d5c733656c7d1f1cc",
+              "file": "k6fakeshop/k6fakeshop.spec.ts",
+              "line": 39,
               "column": 11
             }
           ]
@@ -119,7 +221,7 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2023-10-14T10:19:35.243Z",
-    "duration": 15067.409
+    "startTime": "2023-10-15T08:55:34.402Z",
+    "duration": 8118.397999999999
   }
 }
