@@ -5,7 +5,7 @@ import { MyAccountPage } from "src/pages/k6fakeshop/myAccountPage"
 import { ProductPage } from "src/pages/k6fakeshop/productPage"
 
 // Declare the types of your fixtures.
-type MyFixtures = {
+type K6Fixtures = {
     homePage: HomePage
     cartPage: CartPage
     myAccountPage: MyAccountPage
@@ -13,7 +13,7 @@ type MyFixtures = {
     prodNames: string[]
 }
 
-export const test = base.extend<MyFixtures>({
+export const test = base.extend<K6Fixtures>({
     homePage: async ({ page }, use) => {
         // Set up the fixture.
         const homePage = new HomePage(page);
