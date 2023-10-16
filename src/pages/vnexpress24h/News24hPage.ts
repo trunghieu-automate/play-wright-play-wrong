@@ -1,9 +1,11 @@
 import type { Page, Locator } from "@playwright/test"
 import { writeObjectToJSONFile } from "src/utils/jsonUtil"
+import BasePage from "../basePage";
 
-export class News24hPage {
+export class News24hPage extends BasePage {
 	readonly newsLoc: string = `xpath=//div[contains(@class,"list-news-subfolder")]//article[@data-offset]//span[@class="time-count"]//span//ancestor::article`
 	constructor(public readonly page: Page) {
+		super(page)
 	}
 	async goto() {
 		await this.page.goto('https://vnexpress.net/tin-tuc-24h', { timeout: 60000 });
@@ -22,15 +24,5 @@ export class News24hPage {
 			}))
 		}
 		writeObjectToJSONFile(result, `datas/news-vnexpress.json`)
-	}
-
-	async isSelectorPresent (selector: string): Promise<boolean> {
-		const element = await this.page.$(selector)
-		return element != null
-	}
-
-	async isLocatorPresent (locator: Locator): Promise<boolean> {
-		const visible : boolean = await locator.isVisible({timeout: 500})
-		return visible
 	}
 }

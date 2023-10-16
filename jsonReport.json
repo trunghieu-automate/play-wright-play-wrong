@@ -85,12 +85,12 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 36401,
+                      "duration": 33125,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-16T08:58:28.139Z",
+                      "startTime": "2023-10-16T09:06:26.376Z",
                       "attachments": []
                     }
                   ],
