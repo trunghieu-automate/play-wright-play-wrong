@@ -1,4 +1,5 @@
 import type { Page, Locator } from "@playwright/test"
+import { readJSONFileAsObject } from "src/utils/jsonUtil"
 class BasePage {
     constructor(public readonly page: Page) {
     }
@@ -17,7 +18,11 @@ class BasePage {
         const isVisible: boolean = await locator.isVisible({ timeout: timeout })
         return isVisible
     }
-}
 
+    async readDatasFile(filePath : string, key : string) {
+        const datas = await readJSONFileAsObject(filePath)
+        return datas[key]
+    }
+}
 
 export default BasePage

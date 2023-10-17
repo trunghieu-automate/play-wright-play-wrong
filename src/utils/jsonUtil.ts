@@ -1,7 +1,7 @@
 import fs from "node:fs"
 
 // Define an async function to read a JSON file as a JSON object
-export async function readJSONFileAsObject(filePath: string): Promise<any> {
+export async function readJSONFileAsObject(filePath: string): Promise<Object> {
     if (fs.existsSync(filePath)) {
         const buffer = await fs.promises.readFile(filePath);
         const jsonString = buffer.toString();
