@@ -45,7 +45,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 60000
+        "timeout": 600000
       }
     ],
     "shard": null,
@@ -56,27 +56,27 @@
   },
   "suites": [
     {
-      "title": "news\\vnexpress24h.spec.ts",
-      "file": "news/vnexpress24h.spec.ts",
+      "title": "api\\dmcl\\qa.api.spec.ts",
+      "file": "api/dmcl/qa.api.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "@Vnexpress - get news",
-          "file": "news/vnexpress24h.spec.ts",
-          "line": 3,
-          "column": 10,
+          "title": "@dmcl-api @apiTest",
+          "file": "api/dmcl/qa.api.spec.ts",
+          "line": 51,
+          "column": 6,
           "specs": [
             {
-              "title": "@GetNews",
+              "title": "@100-requests send 100 request consecutively then write to a json file",
               "ok": true,
               "tags": [
-                "GetNews"
+                "100-requests"
               ],
               "tests": [
                 {
-                  "timeout": 60000,
+                  "timeout": 600000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "",
@@ -85,22 +85,623 @@
                     {
                       "workerIndex": 0,
                       "status": "passed",
-                      "duration": 33125,
+                      "duration": 304370,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "request start @1698726838213\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 1 end @1698726841185, duration: 2972 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726841186\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 2 end @1698726843935, duration: 2749 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726843938\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 3 end @1698726846252, duration: 2314 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726846255\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 4 end @1698726848756, duration: 2501 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726848757\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 5 end @1698726851644, duration: 2887 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726851647\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 6 end @1698726854171, duration: 2524 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726854173\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 7 end @1698726858321, duration: 4148 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726858324\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 8 end @1698726862377, duration: 4053 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726862379\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 9 end @1698726864598, duration: 2219 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726864601\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 10 end @1698726867307, duration: 2706 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726867309\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 11 end @1698726871574, duration: 4265 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726871575\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 12 end @1698726874116, duration: 2541 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726874117\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 13 end @1698726876681, duration: 2564 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726876683\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 14 end @1698726879054, duration: 2371 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726879055\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 15 end @1698726882637, duration: 3582 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726882641\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 16 end @1698726886528, duration: 3887 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726886531\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 17 end @1698726889124, duration: 2593 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726889126\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 18 end @1698726891764, duration: 2638 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726891768\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 19 end @1698726894223, duration: 2455 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726894225\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 20 end @1698726898395, duration: 4170 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726898396\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 21 end @1698726901836, duration: 3440 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726901837\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 22 end @1698726904203, duration: 2366 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726904207\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 23 end @1698726907213, duration: 3006 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726907215\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 24 end @1698726911132, duration: 3917 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726911135\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 25 end @1698726914152, duration: 3017 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726914155\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 26 end @1698726916641, duration: 2486 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726916643\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 27 end @1698726919424, duration: 2781 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726919426\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 28 end @1698726923069, duration: 3643 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726923071\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 29 end @1698726925605, duration: 2534 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726925607\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 30 end @1698726930074, duration: 4467 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726930076\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 31 end @1698726932913, duration: 2837 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726932915\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 32 end @1698726935572, duration: 2657 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726935573\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 33 end @1698726938435, duration: 2862 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726938437\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 34 end @1698726941062, duration: 2625 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726941064\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 35 end @1698726943365, duration: 2301 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726943368\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 36 end @1698726946343, duration: 2975 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726946345\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 37 end @1698726949693, duration: 3348 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726949695\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 38 end @1698726952619, duration: 2924 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726952620\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 39 end @1698726955471, duration: 2851 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726955474\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 40 end @1698726957899, duration: 2425 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726957900\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 41 end @1698726962299, duration: 4399 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726962302\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 42 end @1698726965167, duration: 2865 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726965168\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 43 end @1698726968486, duration: 3318 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726968487\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 44 end @1698726971279, duration: 2792 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726971281\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 45 end @1698726973976, duration: 2695 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726973978\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 46 end @1698726978479, duration: 4501 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726978481\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 47 end @1698726980797, duration: 2316 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726980799\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 48 end @1698726984174, duration: 3375 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726984175\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 49 end @1698726987102, duration: 2927 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726987104\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 50 end @1698726989670, duration: 2566 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726989672\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 51 end @1698726992317, duration: 2645 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726992319\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 52 end @1698726995360, duration: 3041 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726995362\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 53 end @1698726997906, duration: 2544 ms\n"
+                        },
+                        {
+                          "text": "request start @1698726997909\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 54 end @1698727000887, duration: 2978 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727000888\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 55 end @1698727003856, duration: 2968 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727003858\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 56 end @1698727007145, duration: 3287 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727007146\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 57 end @1698727009451, duration: 2305 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727009453\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 58 end @1698727012751, duration: 3298 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727012753\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 59 end @1698727016984, duration: 4231 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727016987\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 60 end @1698727020188, duration: 3201 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727020190\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 61 end @1698727023274, duration: 3084 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727023276\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 62 end @1698727025529, duration: 2253 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727025531\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 63 end @1698727029119, duration: 3588 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727029120\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 64 end @1698727033071, duration: 3951 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727033073\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 65 end @1698727035372, duration: 2299 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727035375\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 66 end @1698727038026, duration: 2651 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727038028\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 67 end @1698727041253, duration: 3225 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727041255\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 68 end @1698727044510, duration: 3255 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727044512\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 69 end @1698727047038, duration: 2526 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727047040\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 70 end @1698727049902, duration: 2862 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727049904\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 71 end @1698727052987, duration: 3083 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727052990\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 72 end @1698727056118, duration: 3128 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727056120\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 73 end @1698727058435, duration: 2315 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727058437\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 74 end @1698727060791, duration: 2354 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727060792\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 75 end @1698727064000, duration: 3208 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727064002\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 76 end @1698727066537, duration: 2535 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727066539\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 77 end @1698727069565, duration: 3026 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727069566\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 78 end @1698727072128, duration: 2562 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727072130\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 79 end @1698727076269, duration: 4139 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727076271\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 80 end @1698727078719, duration: 2448 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727078721\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 81 end @1698727081379, duration: 2658 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727081381\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 82 end @1698727084769, duration: 3388 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727084770\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 83 end @1698727087589, duration: 2819 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727087591\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 84 end @1698727090422, duration: 2831 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727090423\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 85 end @1698727094734, duration: 4311 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727094735\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 86 end @1698727100510, duration: 5775 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727100511\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 87 end @1698727104367, duration: 3856 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727104370\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 88 end @1698727106902, duration: 2532 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727106904\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 89 end @1698727109638, duration: 2734 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727109640\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 90 end @1698727112008, duration: 2368 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727112010\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 91 end @1698727115440, duration: 3430 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727115442\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 92 end @1698727118768, duration: 3326 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727118771\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 93 end @1698727122541, duration: 3770 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727122544\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 94 end @1698727125067, duration: 2523 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727125071\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 95 end @1698727128258, duration: 3187 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727128261\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 96 end @1698727132079, duration: 3818 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727132083\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 97 end @1698727134829, duration: 2746 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727134831\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 98 end @1698727137393, duration: 2562 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727137394\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 99 end @1698727140331, duration: 2937 ms\n"
+                        },
+                        {
+                          "text": "request start @1698727140334\n"
+                        },
+                        {
+                          "text": "Successfull request on param page: 100 end @1698727142541, duration: 2207 ms\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2023-10-16T09:06:26.376Z",
+                      "startTime": "2023-10-31T04:33:58.178Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "ab43d3d9edc9c0ab62e5-4879a42a673fb2c17a18",
-              "file": "news/vnexpress24h.spec.ts",
-              "line": 4,
-              "column": 13
+              "id": "88c609bead496399657a-d00d80e00e064e797c7f",
+              "file": "api/dmcl/qa.api.spec.ts",
+              "line": 74,
+              "column": 9
             }
           ]
         }

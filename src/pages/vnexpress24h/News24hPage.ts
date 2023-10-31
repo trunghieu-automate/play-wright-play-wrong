@@ -1,4 +1,4 @@
-import type { Page, Locator } from "@playwright/test"
+import type { Page } from "@playwright/test"
 import { writeObjectToJSONFile } from "src/utils/jsonUtil"
 import BasePage from "../basePage";
 
